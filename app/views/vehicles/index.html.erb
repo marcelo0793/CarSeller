@@ -1,0 +1,73 @@
+<table class="table table-hover table-striped">
+  <tr>
+    <th>Dolar OFICIAL compra: <%=  dolar_oficial_compra %></th>
+    <th></th>
+    <th>Dolar OFICIAL venta: <%=  dolar_oficial_venta%></th>
+    <th></th>
+    <th>Dolar BLUE compra: <%=  dolar_blue_compra%></th>
+    <th></th>
+    <th>Dolar BLUE venta: <%=  dolar_blue_venta %></th>
+  </tr>
+
+
+
+<table class="table table-hover table-striped">
+  <tr>
+    <th>Tipo</th>
+    <th>Modelo</th>
+    <th>Tipo</th>
+    <th>Cliente</th>
+    <th>Precio U$S</th>
+    <th>Precio $</th>
+    <th>Km</th>
+    <th>Combustible</th>
+    <th>Año</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @vehicles.each do |vehicle| %>
+  <tr class="<%= cycle :success %> ">
+    <td><%= vehicle.brand.name %></td>
+    <td><%= vehicle.name %></td>
+    <td><%= vehicle.vehicle_type.name %></td>
+    <td><%= vehicle.customer.name %></td>
+    <td><%= vehicle.price %></td>
+    <td><%= vehicle.price_in_pesos %></td>
+    <td><%= vehicle.km %></td>
+    <td><%= vehicle.type_fuel %></td>
+    <td><%= vehicle.year %></td>
+
+    <td><button class: 'btn btn-warning'><%= link_to 'Editar', edit_vehicle_path(vehicle) %></button></td>
+    <td><button class: 'btn btn-danger'><%= link_to 'Eliminar', vehicle, method: :delete, data: { confirm: 'Esta seguro?' } %></button></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to icon('plus')+'Nuevo Vehiculo', new_vehicle_path, class: 'btn btn-success' %>
+
+<h3>Accesorios</H3>
+
+<table class="table table-hover table-striped">
+  <tr>
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Descripcion</th>
+    <th>Origen</th>
+  </tr>
+
+
+<% @accessories.each do |a| %>
+  <tr class="<%= cycle :success %> "> 
+    <td><%= a.name %></td>
+    <td><%= a.price %></td>
+    <td><%= a.description %></td>
+    <td><%= a.origin %></td>
+  </tr>
+<% end %>
+
+  </tbody>
+</table>
