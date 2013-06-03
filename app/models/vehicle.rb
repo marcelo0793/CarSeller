@@ -8,6 +8,7 @@ class Vehicle < ActiveRecord::Base
   validates_numericality_of :km, :greater_than_or_equal_to => 0
   validates_presence_of :type_fuel
   validates_presence_of :year
+  dollarizeme :price
 
 	def full_name
 		"#{brand.name} - #{name} (#{vehicle_type.name})"	

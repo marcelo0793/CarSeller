@@ -19,19 +19,20 @@ module VehiclesHelper
 	  Dollar.find(:first, :params => {:dollar_type => 2}).seller
 	end
 
-	def name_accessory
-	  Accessory.find(:first, :params => [:name]).name.to_s
+	def dolar_green_compra
+	  Dollar.find(:first, :params => {:dollar_type => 3}).buyer
 	end
 
-	def price_accessory
-	  Accessory.find(:first, :params => [:price]).price.to_s
+	def dolar_gold_compra
+	  Dollar.find(:first, :params => {:dollar_type => 4}).buyer
 	end
 
-	def description_accessory
-	  Accessory.find(:first, :params => [:description]).description.to_s
+	def dolar_colonia_compra
+	  Dollar.find(:first, :params => {:dollar_type => 5}).buyer
 	end
 
-	def origin_accessory
-	  Accessory.find(:first, :params => [:origin]).origin.to_s
+	def dolar_miami_compra
+	  Dollar.find(:first, :params => {:dollar_type => 6}).buyer
 	end
+
 end

@@ -26,6 +26,8 @@ gem 'jquery-rails'
 
 gem 'thin'
 
+gem 'dollarizeme'
+
 
 
 # To use ActiveModel has_secure_password
